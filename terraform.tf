@@ -1,9 +1,9 @@
 terraform {
 
-  cloud {
-    workspaces {
-      name = "learn-terraform-eks"
-    }
+   backend "s3" {
+    bucket = "eks-test-bucket-feb-2023"
+    key    = "eks.tfstate"
+    region = "us-east-1"
   }
 
   required_providers {
